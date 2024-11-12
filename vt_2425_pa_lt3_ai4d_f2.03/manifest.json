@@ -1,0 +1,20 @@
+{
+	"manifest_version": 3,
+	"name": "AI4Debunk Plugin",
+	"version": "1.0",
+	"description": "Extracts text from a web page, to see if it's fake news.",
+	"icons": {
+		"16": "./Client/Images/PlugInLogo.png",
+		"48": "./Client/Images/PlugInLogo.png",
+		"128": "./Client/Images/PlugInLogo.png"
+	},
+	"permissions": ["activeTab", "storage", "scripting", "tabs", "downloads"],
+	"action": {
+		"default_popup": "./client/html/index.html",
+		"default_title": "Scrape Text"
+	},
+	"background": {
+		"service_worker": "client/dist/background.js"
+	},
+	"host_permissions": ["<all_urls>"]
+}

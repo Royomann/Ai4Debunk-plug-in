@@ -1,0 +1,213 @@
+:root {
+	color: rgb(255, 255, 255);
+	--background-color-light: linear-gradient(
+		145deg,
+		rgba(205, 204, 247, 1) 0%,
+		rgba(230, 220, 250, 1) 25%,
+		rgba(250, 250, 250, 1) 100%
+	); /* Defines the light mode background gradient. */
+	--background-color-dark: linear-gradient(
+		145deg,
+		rgba(80, 97, 180, 1) 0%,
+		rgba(68, 60, 158, 1) 25%,
+		rgba(13, 26, 85, 1) 100%
+	); /* Defines the dark mode background gradient. */
+	--button-color-light: rgba(13, 26, 85, 1); /* Sets the color for buttons in light mode. */
+	--button-color-dark: white; /* Sets the color for buttons in dark mode. */
+	--border-color-light: rgba(13, 26, 85, 1); /* Sets the border color for buttons in light mode. */
+	--border-color-dark: white; /* Sets the border color for buttons in dark mode. */
+}
+
+html,
+body {
+	height: 100%; /* Ensures that the html and body elements take up the full height of the viewport. */
+	margin: 0; /* Sets margin to 0 to remove default margins */
+}
+
+body {
+	font-family: Bebas Neue; /* Sets the font for the body text. */
+	width: 400px; /* Fixes the size of the body element. */
+	height: 450px; /* Fixes the size of the body element. */
+	text-align: center; /* Centers text horizontally within the body. */
+	background-color: var(
+		--color-bg
+	); /* Sets the background color using the custom property --color-bg. */
+	color: var(--color-fg); /* Sets the text color using the custom property --color-fg */
+	flex-direction: column; /* Arranges child elements in a vertical column. */
+	display: flex; /* Makes toggle elements align in a row */
+	justify-content: space-between; /* Distributes space between flex items, aligning the first and last. */
+	margin: 0;
+}
+
+body.dark-mode {
+	background-image: var(--background-color-dark); /* Dark mode background image */
+	color: var(--text-color); /* Dark mode text color */
+}
+
+body.light-mode {
+	background-image: var(--background-color-light); /* Light mode background image */
+	color: rgba (13, 26, 85, 1); /* Light mode text color */
+}
+
+body.dark-mode #saveSettingsButton {
+	color: var(--button-color-dark); /* Dark mode button text color */
+}
+
+body.dark-mode #saveSettingsButton:hover {
+	background-color: rgba(13, 26, 85, 1); /* Dark mode button hover background color */
+	color: var(--button-color-dark); /* Dark mode button hover text color */
+}
+
+body.light-mode #saveSettingsButton {
+	color: var(--button-color-light); /* Light mode button text color */
+	border: 2px solid var(--border-color-light); /* Light mode button border */
+}
+
+body.light-mode #saveSettingsButton:hover {
+	background-color: rgba(205, 204, 247, 1); /* Light mode button hover background color */
+	color: var(--button-color-light); /* Light mode button hover text color */
+	border: 2px solid var(--border-color-light); /* Light mode button hover border */
+}
+
+body.dark-mode #backButton {
+	color: var(--button-color-dark); /* Dark mode back button text color */
+}
+
+body.dark-mode #backButton:hover {
+	background-color: rgba(13, 26, 85, 1); /* Dark mode back button hover background color */
+	color: var(--button-color-dark); /* Dark mode back button hover text color */
+}
+
+body.light-mode #backButton {
+	color: var(--button-color-light); /* Light mode back button text color */
+}
+
+body.light-mode #backButton:hover {
+	background-color: rgba(205, 204, 247, 1); /* Light mode back button hover background color */
+	color: var(--button-color-light); /* Light mode back button hover text color */
+}
+
+body.dark-mode .toggle-container span {
+	color: white; /* Dark mode toggle text color */
+}
+
+body.light-mode .toggle-container span {
+	color: rgba (13, 26, 85, 1); /* Light mode toggle text color */
+}
+
+.saveContainer {
+	margin-top: auto; /* Pushes the element to the bottom of the container. */
+	text-align: center;
+}
+
+#backButton {
+	position: absolute; /* Positions the element relative to its nearest positioned ancestor. */
+	top: 10px; /* Positions the element 10 pixels from the top of its containing element. */
+	left: 10px; /* Positions the element 10 pixels from the left of its containing element. */
+	background-color: transparent; /* Sets the background color of the element to be transparent. */
+	border: none; /* Removes any border from the element. */
+	font-size: 24px; /* Sets the text size to 24 pixels. */
+	padding: 10px; /* Adds 10 pixels of space inside the element's border. */
+	cursor: pointer; /* Changes the cursor to a pointer when hovering, indicating it's clickable. */
+	color: var(--button-color-dark);
+}
+
+#saveSettingsButton {
+	font-size: 1rem; /* Sets the font size to the default size. */
+	font-family: Bebas Neue;
+	background-color: transparent;
+	border: 2px solid white;
+	padding: 10px 20px; /* Adds some padding */
+	margin-bottom: 30px; /* Adds a space of 30 pixels below the element, creating distance from the element beneath it. */
+	width: 30%;
+	cursor: pointer;
+	color: var(--button-color-dark);
+}
+
+.switch {
+	position: relative; /* Sets the element's position relative to its normal position */
+	display: inline-block; /* Makes the element an inline block, allowing it to have width and height while still flowing inline with other elements. */
+	width: 64px; /* Defines the size of the switch element. */
+	height: 34px; /* Defines the size of the switch element. */
+}
+
+.switch input {
+	opacity: 0; /* Makes the input checkbox completely transparent, so it's not visible. */
+	width: 0; /* Sets the width of the checkbox to zero, removing it from the layout. */
+	height: 0; /* Sets the heigth of the checkbox to zero, removing it from the layout. */
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0; /* Aligns the top edge of the slider to the top of its container. */
+	left: 0; /* Aligns the left edge of the slider to the left of its container. */
+	right: 0; /* Aligns the right edge of the slider to the right of its container. */
+	bottom: 0; /* Aligns the bottom edge of the slider to the bottom of its container. */
+	background-color: #ccc; /* Sets the background color of the slider to a light gray. */
+	transition: 0.4s; /* Adds a smooth transition effect that lasts 0.4 seconds for property changes (like background color). */
+	border-radius: 34px; /* Rounds the corners of the slider, giving it a pill-like shape. */
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 24px; /* Height of the slider */
+	width: 24px; /* Width of the slider */
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	transition: 0.4s;
+	border-radius: 50%;
+	border: 1px solid white;
+}
+
+input:checked + #slider {
+	background-color: rgba(44, 54, 108, 0.8); /* Slider background color when checked */
+	border: 1px solid white; /* Slider border color when checked */
+}
+
+input:checked + #slider:before {
+	transform: translateX(26px); /* Moves the slider toggle to the right when checked */
+	border: 1px solid white; /* Toggle border color when checked */
+}
+
+.slider.round {
+	border-radius: 34px; /* Rounds slider background corners */
+}
+
+.slider.round:before {
+	border-radius: 50%; /* Rounds the slider toggle itself */
+}
+
+.toggle-container {
+	display: flex;
+	align-items: center; /* Centers toggle elements vertically */
+	justify-content: center; /* Centers toggle elements horizontally */
+	margin: 20px 0;
+}
+
+.toggle-container span {
+	font-size: 1.5rem;
+	margin-right: 10px;
+}
+
+#modeText {
+	color: white; /* Default mode text color */
+}
+
+body.light-mode #modeText {
+	color: rgba(13, 26, 85, 1); /* Light mode color for mode text */
+}
+
+#textSizeContainer {
+	display: flex;
+	align-items: center;
+	margin-top: 20px; /* Space between label and input */
+}
+
+#textSizeInput {
+	font-size: 0.8rem; /* Base font size */
+	padding: 5px;
+	margin-top: 10px;
+}

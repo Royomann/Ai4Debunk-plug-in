@@ -1,0 +1,41 @@
+:root {
+	color: rgb(255, 255, 255);
+	--background-color-light: linear-gradient(
+		145deg,
+		rgba(205, 204, 247, 1) 0%,
+		rgba(230, 220, 250, 1) 25%,
+		rgba(250, 250, 250, 1) 100%
+	);
+	--background-color-dark: linear-gradient(
+		145deg,
+		rgba(80, 97, 180, 1) 0%,
+		rgba(68, 60, 158, 1) 25%,
+		rgba(13, 26, 85, 1) 100%
+	);
+	--button-color-light: black;
+	--button-color-dark: white;
+	--border-color-light: black; /* Randkleur voor licht modus */
+	--border-color-dark: white; /* Randkleur voor donker modus */
+}
+body.dark-mode {
+	background-image: var(--background-color-dark);
+	color: var(--text-color);
+}
+
+body.light-mode {
+	background-image: var(--background-color-light);
+	color: black; /* Of gebruik een variabele */
+}
+
+html,
+body {
+	height: 100%; /* Zorgt ervoor dat body & html 100% vd hoogte innemen */
+	margin: 1; /* Verwijdert marges rond het body-element */
+}
+
+body {
+	font-family: Helvetica;
+}
+h1 {
+	background-color: transparent;
+}

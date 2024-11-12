@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Client/style/popup-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        </style>
+    <title>Hello, World!</title>
+</head>
+<body>
+    <h1 id="text">WELCOME!</h1>
+    <a id="reliability" title="show website data" href="#">Reliability score: 0.00</a>
+    <div class="buttonContainer">
+        <button id="settingsButton">
+            <i class="fa-solid fa-sliders"></i>
+        </button>
+        <button id="scrapeButton">Scrape website</button>
+    </div>
+    <div id="chooseContainer">
+        <h2 id="hiddenText" style="display: none;">Would you like to see the scraped text?</h2>
+        <div class="yes-no-buttons">
+            <div class="button-group"></div>
+                <button id="yesButton" style="display: none;">Yes</button>
+                <button id="noButton" style="display: none;">No</button>
+            </div>
+        </div>
+    </div>
+    <script src="/Client/dist/popup.js"></script>
+    <script src="/Client/dist/reliabilityScore.js"></script>
+    <script src="/Client/dist/seeButtons.js"></script>
+    <script src="/Client/dist/getData.js"></script>
+</body>
+</html>

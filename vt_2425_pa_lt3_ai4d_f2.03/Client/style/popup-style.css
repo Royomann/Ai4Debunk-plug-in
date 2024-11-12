@@ -1,0 +1,201 @@
+:root {
+	color: rgb(255, 255, 255); /* Base color for text in the root element */
+	--background-color-light: linear-gradient(
+		145deg,
+		rgba(205, 204, 247, 1) 0%,
+		rgba(230, 220, 250, 1) 25%,
+		rgba(250, 250, 250, 1) 100%
+	); /* Defines the light mode background gradient. */
+	--background-color-dark: linear-gradient(
+		145deg,
+		rgba(80, 97, 180, 1) 0%,
+		rgba(68, 60, 158, 1) 25%,
+		rgba(13, 26, 85, 1) 100%
+	); /* Defines the dark mode background gradient. */
+	--button-color-light: rgba(13, 26, 85, 1); /* Sets the color for buttons in light mode. */
+	--button-color-dark: white; /* Sets the color for buttons in dark mode. */
+	--border-color-light: rgba(13, 26, 85, 1); /* Sets the border color for buttons in light mode. */
+	--border-color-dark: white; /* Sets the border color for buttons in dark mode. */
+}
+
+html,
+body {
+	height: 100%; /* Ensures the full viewport height */
+	margin: 0; /* Removes default margin */
+	overflow: hidden; /* Prevents scrolling */
+}
+
+body {
+	font-family: Bebas Neue; /* Sets font for the entire body */
+	width: 400px; /* Body width */
+	height: 450px; /* Body height */
+	text-align: center; /* Centers all text horizontally */
+	background-image: linear-gradient(
+		145deg,
+		rgba(80, 97, 180, 1) 0%,
+		rgba(68, 60, 158, 1) 25%,
+		rgba(13, 26, 85, 1) 100%
+	); /* Default gradient background */
+}
+
+body.dark-mode {
+	background-image: var(--background-color-dark); /* Dark mode background gradient */
+	color: var(--text-color); /* Dark mode text color */
+}
+
+body.light-mode {
+	background-image: var(--background-color-light); /* Light mode background gradient */
+	color: rgba(13, 26, 85, 1); /* Light mode text color */
+}
+
+body.dark-mode #scrapeButton {
+	color: var(--button-color-dark); /* Dark mode scrape button text color */
+}
+
+body.dark-mode #scrapeButton:hover {
+	background-color: rgba(13, 26, 85, 1); /* Dark mode hover background for scrape button */
+	color: var(--button-color-dark); /* Dark mode hover text color for scrape button */
+}
+
+body.light-mode #scrapeButton {
+	color: var(--button-color-light); /* Light mode scrape button text color */
+	border: 2px solid var(--border-color-light); /* Light mode scrape button border */
+}
+
+body.light-mode #scrapeButton:hover {
+	background-color: rgba(205, 204, 247, 1); /* Light mode hover background for scrape button */
+	color: var(--button-color-light); /* Light mode hover text color for scrape button */
+	border: 2px solid var(--border-color-light); /* Light mode hover border for scrape button */
+}
+
+body.dark-mode #settingsButton {
+	color: var(--button-color-dark); /* Dark mode settings button text color */
+}
+
+body.dark-mode #settingsButton:hover {
+	background-color: rgba(13, 26, 85, 1); /* Dark mode hover background for settings button */
+	color: var(--button-color-dark); /* Dark mode hover text color for settings button */
+}
+
+body.light-mode #settingsButton {
+	color: var(--button-color-light); /* Light mode settings button text color */
+}
+
+body.light-mode #settingsButton:hover {
+	background-color: rgba(205, 204, 247, 1); /* Light mode hover background for settings button */
+	color: var(--button-color-light); /* Light mode hover text color for settings button */
+}
+
+body.dark-mode #reliability {
+	color: var(--button-color-dark); /* Dark mode text color for reliability section */
+}
+
+body.dark-mode #reliability:hover {
+	background-color: rgba(13, 26, 85, 1); /* Dark mode hover background for reliability section */
+	color: var(--button-color-dark); /* Dark mode hover text color for reliability section */
+}
+
+body.light-mode #reliability {
+	color: var(--button-color-light); /* Light mode text color for reliability section */
+}
+
+body.light-mode #reliability:hover {
+	background-color: rgba(
+		205,
+		204,
+		247,
+		1
+	); /* Light mode hover background for reliability section */
+	color: var(--button-color-light); /* Light mode hover text color for reliability section */
+}
+
+body.dark-mode #yesButton,
+body.dark-mode #noButton {
+	color: var(--button-color-dark); /* Dark mode yes/no button text color */
+}
+
+body.dark-mode #yesButton:hover,
+body.dark-mode #noButton:hover {
+	background-color: rgba(13, 26, 85, 1); /* Dark mode hover background for yes/no buttons */
+	color: var(--button-color-dark); /* Dark mode hover text color for yes/no buttons */
+}
+
+h1 {
+	background-color: transparent; /* Transparent background for h1 */
+	letter-spacing: 0.1rem; /* Adds space between each letter */
+}
+
+a {
+	font-size: 30px; /* Anchor element font size */
+}
+
+p {
+	background-color: transparent; /* Transparent background for paragraph elements */
+}
+
+#settingsButton {
+	background-color: transparent;
+	border: none; /* Removes border */
+	cursor: pointer; /* Changes cursor to pointer on hover */
+	font-size: 24px; /* Increases icon size */
+	padding: 10px; /* Adds padding for clickability */
+	position: absolute; /* Positions it relative to the window */
+	top: 10px; /* Distance from the top */
+	right: 10px; /* Distance from the right */
+	color: var(--button-color-light);
+}
+
+#reliability {
+	background-color: transparent;
+	color: white;
+}
+
+#scrapeButton {
+	background-color: transparent;
+	color: white;
+	font-family: Bebas Neue;
+	font-size: 20px; /* Font size for scrape button */
+	border: 2px solid white; /* Button border */
+	padding: 10px 20px; /* Adds padding around button text */
+	margin-top: 50px; /* Top spacing for button */
+	margin-bottom: 30px; /* Bottom spacing between buttons */
+	width: 30%; /* Sets button width */
+	cursor: pointer;
+}
+
+.button-group {
+	display: flex;
+	justify-content: center;
+	flex-direction: row; /* Aligns buttons in a row */
+	gap: 20px; /* Adds space between buttons */
+}
+
+.yes-no-buttons {
+	display: flex;
+	flex-direction: row;
+	align-items: center; /* Centers buttons vertically */
+	gap: 20px;
+}
+
+#yesButton,
+#noButton {
+	background-color: transparent;
+	font-family: Bebas Neue;
+	color: white;
+	border: 2px solid white;
+	padding: 10px 20px;
+	cursor: pointer;
+	width: 100px; /* Sets fixed width for yes/no buttons */
+}
+
+#chooseContainer {
+	display: flex;
+	flex-direction: column; /* Stacks elements vertically */
+	align-items: center; /* Centers elements horizontally */
+	height: 100%;
+}
+
+h2 {
+	margin-bottom: 20px; /* Adds space between the question and buttons */
+	font-size: 20px; /* Font size for h2 elements */
+}
